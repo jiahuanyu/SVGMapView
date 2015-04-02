@@ -90,22 +90,12 @@ public class BasicActivity extends ActionBarActivity
 
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu)
-    {
-        getMenuInflater().inflate(R.menu.menu_basic, menu);
-        return true;
-    }
-
-    @Override
     public boolean onOptionsItemSelected(MenuItem item)
     {
         switch (item.getItemId())
         {
             case android.R.id.home:
                 finish();
-                break;
-            case R.id.action_getcurrentmap:
-                mapView.getCurrentMap();
                 break;
         }
         return true;
