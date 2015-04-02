@@ -119,11 +119,27 @@ Android v2.2+
     mapView.getController().setZoomWithTouchEventCenterEnabled(false);
 ```
 
+- 设置当前的缩放率
+```java
+    // 此方法是相对于初始大小
+    mapView.getController().setCurrentZoomValue(2);
+    mapView.getController().setCurrentZoomValue(0.5f);
+```
+
+- 设置当前的旋转角度
+```java
+    // 正时为顺时针旋转
+    // 如果旋转手势是关闭状态，则此方法无效
+    mapView.getController().setCurrentRotationDegrees(30);
+```
+
+
 - 截取当前地图
 ```java
     mapView.getCurrentMap();
+    //调用以上方法之后，在地图截图生成完毕后，在设置地图监听中返回
 ```
-调用以上方法之后，在地图截图生成完毕后，在设置地图监听中返回
+
 
 ## 说明
 现在初始版本还存在大量性能问题，后续我将慢慢推进
