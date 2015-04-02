@@ -1,4 +1,4 @@
-package com.jiahuan.svgmapview.sample;
+package com.jiahuan.svgmapview.sample.helper;
 
 import android.content.Context;
 
