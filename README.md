@@ -53,21 +53,6 @@ Android v2.2+
   }
 ```
 
-- 手势相关设置
-```java
-    // 关闭地图旋转的手势 默认开启
-    // 如果将地图旋转手势置为false，那么地图将被固定在中间，地图旋转的相关操作也将被禁止掉。如果为true那么地图的位置将不会被固定
-    mapView.getController().setRotationGestureEnabled(false);
-    // 开启地图拖拉手势  默认开启
-    mapView.getController().setScrollGestureEnabled(true);
-    // 开启地图缩放手势 默认开启
-    mapView.getController().setZoomGestureEnabled(true);
-    // 关闭地图旋转的中心点是手势中心点 默认关闭，中心点是地图的中心点
-    mapView.getController().setRoateWithTouchEventCenterEnabled(false);
-    // 关闭地图缩放的中心点是手势中心点 默认关闭，中心点是地图的中心点
-    mapView.getController().setZoomWithTouchEventCenterEnabled(false);
-```
-
 - 设置地图监听
 ```java
     mapView.registeMapViewListener(new SVGMapViewListener()
@@ -119,6 +104,21 @@ Android v2.2+
 ```
 
 ## 地图相关操作
+- 手势相关设置
+```java
+    // 关闭地图旋转的手势 默认开启
+    // 如果将地图旋转手势置为false，那么地图将被固定在中间，地图旋转的相关操作也将被禁止掉。如果为true那么地图的位置将不会被固定
+    mapView.getController().setRotationGestureEnabled(false);
+    // 开启地图拖拉手势  默认开启
+    mapView.getController().setScrollGestureEnabled(true);
+    // 开启地图缩放手势 默认开启
+    mapView.getController().setZoomGestureEnabled(true);
+    // 关闭地图旋转的中心点是手势中心点 默认关闭，中心点是地图的中心点
+    mapView.getController().setRoateWithTouchEventCenterEnabled(false);
+    // 关闭地图缩放的中心点是手势中心点 默认关闭，中心点是地图的中心点
+    mapView.getController().setZoomWithTouchEventCenterEnabled(false);
+```
+
 - 截取当前地图
 ```java
     mapView.getCurrentMap();
