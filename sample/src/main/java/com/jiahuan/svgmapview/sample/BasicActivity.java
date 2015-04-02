@@ -76,16 +76,6 @@ public class BasicActivity extends ActionBarActivity
 
         mapView.loadMap(AssetsHelper.getContent(this, "sample2.svg"));
 
-        // 关闭地图旋转的手势 默认开启
-        mapView.getController().setRotationGestureEnabled(false);
-        // 开启地图拖拉手势  默认开启
-        mapView.getController().setScrollGestureEnabled(true);
-        // 开启地图缩放手势 默认开启
-        mapView.getController().setZoomGestureEnabled(true);
-        // 关闭地图旋转的中心点是手势中心点 默认关闭，中心点是地图的中心点
-        mapView.getController().setRoateWithTouchEventCenterEnabled(false);
-        // 关闭地图缩放的中心点是手势中心点 默认关闭，中心点是地图的中心点
-        mapView.getController().setZoomWithTouchEventCenterEnabled(false);
     }
 
 
