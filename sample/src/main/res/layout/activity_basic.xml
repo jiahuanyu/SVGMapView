@@ -2,11 +2,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-
-    <ListView
-        android:id="@+id/main_select_lv"
+    <com.jiahuan.svgmapview.library.SVGMapView
+        android:id="@+id/mapView"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    </ListView>
+
+    </com.jiahuan.svgmapview.library.SVGMapView>
+
+
 
 </RelativeLayout>

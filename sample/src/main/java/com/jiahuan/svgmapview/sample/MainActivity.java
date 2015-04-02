@@ -1,14 +1,20 @@
 package com.jiahuan.svgmapview.sample;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-
-import com.jiahuan.svgmapview.library.SVGMapView;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 
 public class MainActivity extends ActionBarActivity
 {
-    private SVGMapView mapView;
+
+    private ListView mSelectListView;
+    private ArrayAdapter<String> mAdapter;
+    private Class[] mClasses = {BasicActivity.class};
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -16,34 +22,24 @@ public class MainActivity extends ActionBarActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mapView = (SVGMapView) findViewById(R.id.mapView);
-
-        mapView.loadMap(AssetsHelper.getContent(this, "sample2.svg"));
-
-        mapView.getController().setRotationGestureEnabled(false);
+        initialize();
     }
 
 
-    @Override
-    protected void onPause()
+    private void initialize()
     {
-        super.onPause();
-        mapView.onPause();
+        mSelectListView = (ListView) findViewById(R.id.main_select_lv);
+        mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.activity_select_array));
+        mSelectListView.setAdapter(mAdapter);
+        mSelectListView.setOnItemClickListener(new AdapterView.OnItemClickListener()
+        {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id)
+            {
+                startActivity(new Intent(MainActivity.this, BasicActivity.class));
+            }
+        });
     }
 
 
-    @Override
-    protected void onResume()
-    {
-        super.onResume();
-        mapView.onResume();
-    }
-
-
-    @Override
-    protected void onDestroy()
-    {
-        super.onDestroy();
-        mapView.onDestory();
-    }
 }

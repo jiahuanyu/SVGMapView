@@ -1,6 +1,7 @@
 <resources>
-    <string name="app_name">sample</string>
-
-    <string name="hello_world">Hello world!</string>
+    <string name="app_name">SVGMapView_Sample</string>
     <string name="action_settings">Settings</string>
+    <array name="activity_select_array">
+        <item>基础地图</item>
+    </array>
 </resources>
