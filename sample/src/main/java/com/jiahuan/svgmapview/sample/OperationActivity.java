@@ -75,16 +75,6 @@ public class OperationActivity extends ActionBarActivity
         });
 
         mapView.loadMap(AssetsHelper.getContent(this, "sample2.svg"));
-
-
-        // 开启地图拖拉手势  默认开启
-        mapView.getController().setScrollGestureEnabled(true);
-        // 开启地图缩放手势 默认开启
-        mapView.getController().setZoomGestureEnabled(true);
-        // 关闭地图旋转的中心点是手势中心点 默认关闭，中心点是地图的中心点
-        mapView.getController().setRoateWithTouchEventCenterEnabled(false);
-        // 关闭地图缩放的中心点是手势中心点 默认关闭，中心点是地图的中心点
-        mapView.getController().setZoomWithTouchEventCenterEnabled(false);
     }
 
 
@@ -117,8 +107,58 @@ public class OperationActivity extends ActionBarActivity
                     item.setTitle("关闭旋转手势");
                 }
                 break;
-//            case R.id.
-
+            case R.id.action_scroll_gesture:
+                if (item.getTitle().toString().contains("关闭"))
+                {
+                    // 开启地图拖拉手势  默认开启
+                    mapView.getController().setScrollGestureEnabled(false);
+                    item.setTitle("开启拖拉手势");
+                }
+                else
+                {
+                    mapView.getController().setScrollGestureEnabled(true);
+                    item.setTitle("关闭拖拉手势");
+                }
+                break;
+            case R.id.action_zoom_gesture:
+                if (item.getTitle().toString().contains("关闭"))
+                {
+                    // 开启地图缩放手势 默认开启
+                    mapView.getController().setZoomGestureEnabled(false);
+                    item.setTitle("开启缩放手势");
+                }
+                else
+                {
+                    mapView.getController().setZoomGestureEnabled(true);
+                    item.setTitle("关闭缩放手势");
+                }
+                break;
+            case R.id.action_rotate_touch_center:
+                if (item.getTitle().toString().contains("关闭"))
+                {
+                    // 关闭地图旋转的中心点是手势中心点 默认关闭，中心点是地图的中心点
+                    mapView.getController().setRoateWithTouchEventCenterEnabled(false);
+                    item.setTitle("开启手势旋转中心");
+                }
+                else
+                {
+                    mapView.getController().setRoateWithTouchEventCenterEnabled(true);
+                    item.setTitle("关闭手势旋转中心");
+                }
+                break;
+            case R.id.action_zoom_touch_center:
+                if (item.getTitle().toString().contains("关闭"))
+                {
+                    // 关闭地图缩放的中心点是手势中心点 默认关闭，中心点是地图的中心点
+                    mapView.getController().setZoomWithTouchEventCenterEnabled(false);
+                    item.setTitle("开启手势缩放中心");
+                }
+                else
+                {
+                    mapView.getController().setZoomWithTouchEventCenterEnabled(true);
+                    item.setTitle("关闭手势缩放中心");
+                }
+                break;
             case R.id.action_get_current_map:
                 mapView.getCurrentMap();
                 break;
