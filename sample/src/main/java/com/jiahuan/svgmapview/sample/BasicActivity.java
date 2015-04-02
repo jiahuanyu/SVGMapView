@@ -5,6 +5,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.MenuItem;
 
 import com.jiahuan.svgmapview.library.SVGMapView;
+import com.jiahuan.svgmapview.sample.helper.AssetsHelper;
 
 
 public class BasicActivity extends ActionBarActivity
