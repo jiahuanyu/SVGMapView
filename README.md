@@ -53,6 +53,76 @@ Android v2.2+
   }
 ```
 
+- 手势相关设置
+```java
+    // 关闭地图旋转的手势 默认开启
+    mapView.getController().setRotationGestureEnabled(false);
+    // 开启地图拖拉手势  默认开启
+    mapView.getController().setScrollGestureEnabled(true);
+    // 开启地图缩放手势 默认开启
+    mapView.getController().setZoomGestureEnabled(true);
+    // 关闭地图旋转的中心点是手势中心点 默认关闭，中心点是地图的中心点
+    mapView.getController().setRoateWithTouchEventCenterEnabled(false);
+    // 关闭地图缩放的中心点是手势中心点 默认关闭，中心点是地图的中心点
+    mapView.getController().setZoomWithTouchEventCenterEnabled(false);
+```
+
+- 设置地图监听
+```java
+    mapView.registeMapViewListener(new SVGMapViewListener()
+    {
+        @Override
+        public void onMapLoadComplete()
+        {
+            // 地图加载完成
+            BasicActivity.this.runOnUiThread(new Runnable()
+            {
+                @Override
+                public void run()
+                {
+                    Toast.makeText(BasicActivity.this, "onMapLoadComplete", Toast.LENGTH_LONG).show();
+                }
+            });
+        }
+
+        @Override
+        public void onMapLoadError()
+        {
+            // 地图加载失败
+            BasicActivity.this.runOnUiThread(new Runnable()
+            {
+                @Override
+                public void run()
+                {
+                    Toast.makeText(BasicActivity.this, "onMapLoadError", Toast.LENGTH_LONG).show();
+                }
+            });
+        }
+
+        @Override
+        public void onGetCurrentMap(Bitmap bitmap)
+        {
+            // 获取地图截图 通过getCurrentMap
+            // 保存到本地
+            //........
+            BasicActivity.this.runOnUiThread(new Runnable()
+            {
+                @Override
+                public void run()
+                {
+                    Toast.makeText(BasicActivity.this, "onGetCurrentMap", Toast.LENGTH_LONG).show();
+                }
+            });
+        }
+    });
+```
+
+## 地图相关操作
+- 截取当前地图
+```java
+    mapView.getCurrentMap();
+```
+调用以上方法之后，在地图截图生成完毕后，在设置地图监听中返回
 
 ## 说明
 现在初始版本还存在大量性能问题，后续我将慢慢推进
