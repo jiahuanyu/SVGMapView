@@ -23,4 +23,27 @@ public class MainActivity extends ActionBarActivity
         mapView.getController().setRotationGestureEnabled(false);
     }
 
+
+    @Override
+    protected void onPause()
+    {
+        super.onPause();
+        mapView.onPause();
+    }
+
+
+    @Override
+    protected void onResume()
+    {
+        super.onResume();
+        mapView.onResume();
+    }
+
+
+    @Override
+    protected void onDestroy()
+    {
+        super.onDestroy();
+        mapView.onDestory();
+    }
 }
