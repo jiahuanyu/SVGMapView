@@ -143,13 +143,13 @@ public class MapMainView extends SurfaceView implements Callback
     public void surfaceChanged(SurfaceHolder holder, int format, int width, int height)
     {
         this.surfaceHolder = holder;
-        if (surfaceHolder != null)
-        {
-            this.refresh();
-        }
         if (dirty == null || dirty.bottom == 0 || dirty.right == 0)
         {
             dirty = new Rect(0, 0, this.getWidth(), this.getHeight());
+        }
+        if (surfaceHolder != null)
+        {
+            this.refresh();
         }
     }
 
@@ -404,8 +404,11 @@ public class MapMainView extends SurfaceView implements Callback
 
     public void setCurrentRotationDegrees(float degrees)
     {
+        this.matrix.postRotate(-currentRotateDegrees + degrees);
         this.rotateDegrees = this.currentRotateDegrees = degrees;
         setCurrentRotateDegreesWithRule();
+        refresh();
+        mapCenter(true, true);
     }
 
     public float getCurrentZoomValue()

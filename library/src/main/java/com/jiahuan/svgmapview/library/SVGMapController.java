@@ -49,7 +49,12 @@ public class SVGMapController
      */
     public void setRotationGestureEnabled(boolean enabled)
     {
+        if (!enabled)
+        {
+            setCurrentRotationDegrees(0);
+        }
         this.mapMainView.setRotationGestureEnabled(enabled);
+
     }
 
 
