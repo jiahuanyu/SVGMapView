@@ -402,13 +402,16 @@ public class MapMainView extends SurfaceView implements Callback
         return this.currentRotateDegrees;
     }
 
-    public void setCurrentRotationDegrees(float degrees)
+    public void setCurrentRotationDegrees(float degrees, float pivotX, float pivotY)
     {
-        this.matrix.postRotate(-currentRotateDegrees + degrees);
-        this.rotateDegrees = this.currentRotateDegrees = degrees;
-        setCurrentRotateDegreesWithRule();
-        refresh();
-        mapCenter(true, true);
+        if (isRotationGestureEnabled)
+        {
+            this.matrix.postRotate(-currentRotateDegrees + degrees, pivotX, pivotY);
+            this.rotateDegrees = this.currentRotateDegrees = degrees;
+            setCurrentRotateDegreesWithRule();
+            refresh();
+            mapCenter(true, true);
+        }
     }
 
     public float getCurrentZoomValue()
@@ -451,41 +454,6 @@ public class MapMainView extends SurfaceView implements Callback
     public void setMinZoomValue(float minZoomValue)
     {
         this.minZoomValue = minZoomValue;
-    }
-
-    public void zoomBy(float zoomRatio, float pivotX, float pivotY)
-    {
-        float zoom = getCurrentZoomValue();
-        float zoomdis = zoomRatio;
-        if (zoomRatio > 1)
-        {
-            if (zoomRatio * zoom > maxZoomValue)
-            {
-                zoomdis = maxZoomValue / zoom;
-                zoom = maxZoomValue;
-            }
-            else
-            {
-                zoom *= zoomRatio;
-                zoomdis = zoomRatio;
-            }
-        }
-        else if (zoomRatio < 1)
-        {
-            if (zoom * zoomRatio < minZoomValue)
-            {
-                zoomdis = minZoomValue / zoom;
-                zoom = minZoomValue;
-            }
-            else
-            {
-                zoom *= zoomRatio;
-                zoomdis = zoomRatio;
-            }
-        }
-        this.zoom = this.currentZoom = zoom;
-        this.matrix.postScale(zoomdis, zoomdis, pivotX, pivotY);
-        this.refresh();
     }
 
 

@@ -115,7 +115,12 @@ public class SVGMapController
      */
     public void setCurrentRotationDegrees(float degrees)
     {
-        this.mapMainView.setCurrentRotationDegrees(degrees);
+        setCurrentRotationDegrees(degrees, mapMainView.getWidth() / 2, mapMainView.getHeight() / 2);
+    }
+
+    public void setCurrentRotationDegrees(float degrees, float pivotX, float pivotY)
+    {
+        this.mapMainView.setCurrentRotationDegrees(degrees, pivotX, pivotY);
     }
 
 
