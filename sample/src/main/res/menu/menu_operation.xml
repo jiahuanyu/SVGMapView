@@ -1,0 +1,37 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context=".MainActivity">
+
+    <!-- 手势相关 -->
+    <item
+        android:id="@+id/action_rotation_gesture"
+        android:title="关闭旋转手势"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/action_scroll_gesture"
+        android:title="关闭拖拉手势"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/action_zoom_gesture"
+        android:title="关闭缩放手势"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/action_rotate_touch_center"
+        android:title="开启手势旋转中心"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/action_zoom_touch_center"
+        android:title="开启手势缩放中心"
+        app:showAsAction="never"/>
+
+    <!-- 操作相关 -->
+    <item
+        android:id="@+id/action_get_current_map"
+        android:title="获取当前地图截图"
+        app:showAsAction="never"/>
+</menu>

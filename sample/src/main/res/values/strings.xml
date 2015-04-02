@@ -3,5 +3,6 @@
     <string name="action_settings">Settings</string>
     <array name="activity_select_array">
         <item>基础地图</item>
+        <item>地图操作</item>
     </array>
 </resources>

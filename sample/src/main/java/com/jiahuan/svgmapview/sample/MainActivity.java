@@ -14,7 +14,7 @@ public class MainActivity extends ActionBarActivity
 
     private ListView mSelectListView;
     private ArrayAdapter<String> mAdapter;
-    private Class[] mClasses = {BasicActivity.class};
+    private Class[] mClasses = {BasicActivity.class, OperationActivity.class};
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -36,7 +36,7 @@ public class MainActivity extends ActionBarActivity
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id)
             {
-                startActivity(new Intent(MainActivity.this, BasicActivity.class));
+                startActivity(new Intent(MainActivity.this, mClasses[position]));
             }
         });
     }

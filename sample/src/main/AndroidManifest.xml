@@ -21,6 +21,11 @@
             android:name=".BasicActivity">
 
         </activity>
+
+        <activity
+            android:name=".OperationActivity">
+
+        </activity>
     </application>
 
 </manifest>
