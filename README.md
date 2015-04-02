@@ -6,6 +6,9 @@
 ## 系统要求
 Android v2.2+
 
+## 效果展示
+![Sample](./sample.gif)
+
 ## 基础地图
 - 添加控件到布局文件中
 ```xml
