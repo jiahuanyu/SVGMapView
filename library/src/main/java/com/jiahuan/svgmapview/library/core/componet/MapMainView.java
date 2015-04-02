@@ -418,8 +418,9 @@ public class MapMainView extends SurfaceView implements Callback
 
     public void setCurrentZoomValue(float zoom, float pivotX, float pivotY)
     {
+        this.matrix.postScale(zoom / currentZoom, zoom / currentZoom, pivotX, pivotY);
         this.zoom = this.currentZoom = zoom;
-        this.matrix.setScale(zoom, zoom, pivotX, pivotY);
+        this.refresh();
     }
 
     public float getMaxZoomValue()

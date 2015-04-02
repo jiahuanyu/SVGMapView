@@ -103,6 +103,11 @@ public class SVGMapController
         this.mapMainView.setCurrentZoomValue(zoom, pivotX, pivotY);
     }
 
+    public void setCurrentZoomValue(float zoom)
+    {
+        setCurrentZoomValue(zoom, mapMainView.getWidth() / 2, mapMainView.getHeight() / 2);
+    }
+
     /**
      * 以非动画的形式设置当前地图的旋转角度 【0，360】
      *
