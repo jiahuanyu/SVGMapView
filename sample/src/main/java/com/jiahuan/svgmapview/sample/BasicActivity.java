@@ -32,6 +32,7 @@ public class BasicActivity extends ActionBarActivity
             @Override
             public void onMapLoadComplete()
             {
+                // 地图加载完成
                 BasicActivity.this.runOnUiThread(new Runnable()
                 {
                     @Override
@@ -45,6 +46,7 @@ public class BasicActivity extends ActionBarActivity
             @Override
             public void onMapLoadError()
             {
+                // 地图加载失败
                 BasicActivity.this.runOnUiThread(new Runnable()
                 {
                     @Override
@@ -58,6 +60,7 @@ public class BasicActivity extends ActionBarActivity
             @Override
             public void onGetCurrentMap(Bitmap bitmap)
             {
+                // 获取地图截图
                 // 保存到本地
                 //........
                 BasicActivity.this.runOnUiThread(new Runnable()
