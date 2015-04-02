@@ -165,6 +165,10 @@ public class OperationActivity extends ActionBarActivity
             case R.id.action_zoom_half:
                 mapView.getController().setCurrentZoomValue(0.5f);
                 break;
+            case R.id.action_rotate_to:
+                // 正时为顺时针旋转
+                mapView.getController().setCurrentRotationDegrees(30);
+                break;
             case R.id.action_get_current_map:
                 mapView.getCurrentMap();
                 break;

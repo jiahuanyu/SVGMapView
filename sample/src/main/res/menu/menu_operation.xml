@@ -30,16 +30,19 @@
         app:showAsAction="never"/>
 
     <!-- 操作相关 -->
-
-
     <item
         android:id="@+id/action_zoom_double"
-        android:title="放大到初始的两倍"
+        android:title="设置当前缩放率为放大到初始的两倍"
         app:showAsAction="never"/>
 
     <item
         android:id="@+id/action_zoom_half"
-        android:title="缩小到初始的一半"
+        android:title="设置当前缩放率为缩小到初始的一半"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/action_rotate_to"
+        android:title="设置当前旋转角度为初始30度"
         app:showAsAction="never"/>
 
     <item
