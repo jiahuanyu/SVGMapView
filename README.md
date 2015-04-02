@@ -6,7 +6,7 @@
 ## 系统要求
 Android v2.2+
 
-## 项目设置
+## 基础地图
 - 添加控件到布局文件中
 ```xml
   <com.jiahuan.svgmapview.library.SVGMapView
@@ -19,8 +19,11 @@ Android v2.2+
 - `Activity`界面中使用
 ```java
   mapView = (SVGMapView) findViewById(R.id.mapView);
+```
+
+- 加载地图
+```java
   mapView.loadMap(AssetsHelper.getContent(this, "sample2.svg"));  // 这里加载的是SVG的字符串
-  mapView.getController().setRotationGestureEnabled(false);
 ```
 
 - 生命周期函数
