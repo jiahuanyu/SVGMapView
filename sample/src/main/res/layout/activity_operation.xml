@@ -6,9 +6,7 @@
         android:id="@+id/operation_mapview"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
     </com.jiahuan.svgmapview.library.SVGMapView>
-
 
 
 </RelativeLayout>

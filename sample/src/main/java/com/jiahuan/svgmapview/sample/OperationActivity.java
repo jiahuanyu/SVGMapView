@@ -159,6 +159,12 @@ public class OperationActivity extends ActionBarActivity
                     item.setTitle("关闭手势缩放中心");
                 }
                 break;
+            case R.id.action_zoom_double:
+                mapView.getController().setCurrentZoomValue(2);
+                break;
+            case R.id.action_zoom_half:
+                mapView.getController().setCurrentZoomValue(0.5f);
+                break;
             case R.id.action_get_current_map:
                 mapView.getCurrentMap();
                 break;

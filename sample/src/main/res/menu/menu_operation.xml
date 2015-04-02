@@ -30,6 +30,18 @@
         app:showAsAction="never"/>
 
     <!-- 操作相关 -->
+
+
+    <item
+        android:id="@+id/action_zoom_double"
+        android:title="放大到初始的两倍"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/action_zoom_half"
+        android:title="缩小到初始的一半"
+        app:showAsAction="never"/>
+
     <item
         android:id="@+id/action_get_current_map"
         android:title="获取当前地图截图"
