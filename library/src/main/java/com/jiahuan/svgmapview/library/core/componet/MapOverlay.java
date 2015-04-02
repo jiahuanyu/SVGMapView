@@ -39,7 +39,6 @@ public class MapOverlay extends SVGMapBaseOverlay
                 {
                     if (!hasMeasured)
                     {
-                        Log.i(TAG, "getViewTreeObserver");
                         calcRatio();
                     }
                     return true;
@@ -62,10 +61,7 @@ public class MapOverlay extends SVGMapBaseOverlay
     {
         float zoom = getInitScale(this.mapMainView.getWidth(), this.mapMainView.getHeight(), floorMap.getWidth(), floorMap.getHeight());
         Log.i(TAG, zoom + " = zoom");
-        if (zoom < this.mapMainView.getMinZoomValue())
-        {
-            this.mapMainView.setMinZoomValue(zoom);
-        }
+        this.mapMainView.setMinZoomValue(zoom);
         this.mapMainView.setCurrentZoomValue(zoom, 0, 0);
         float deltaHeight = this.mapMainView.getHeight() - zoom * floorMap.getHeight();
         float deltaWidth = this.mapMainView.getWidth() - zoom * floorMap.getWidth();

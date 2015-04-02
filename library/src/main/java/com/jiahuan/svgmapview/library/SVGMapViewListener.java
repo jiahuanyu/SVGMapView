@@ -1,6 +1,8 @@
 package com.jiahuan.svgmapview.library;
 
 
+import android.graphics.Bitmap;
+
 /**
  * 地图事件监听类
  *
@@ -12,4 +14,6 @@ public interface SVGMapViewListener
     void onMapLoadComplete();
 
     void onMapLoadError();
+
+    void onGetCurrentMap(Bitmap bitmap);
 }

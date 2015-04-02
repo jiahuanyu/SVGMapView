@@ -28,6 +28,11 @@ public class SVGMapView extends FrameLayout
     private MapMainView mapMainView;
     private SVGMapController mapController;
 
+    public SVGMapView(Context context)
+    {
+        this(context, null);
+    }
+
     public SVGMapView(Context context, AttributeSet attrs)
     {
         this(context, attrs, 0);
@@ -49,9 +54,9 @@ public class SVGMapView extends FrameLayout
     }
 
     /**
-     * 取得地圖控制器
+     * 取得地图控制器
      *
-     * @return 地圖控制类
+     * @return 地图控制器
      */
     public SVGMapController getController()
     {
@@ -75,10 +80,10 @@ public class SVGMapView extends FrameLayout
     /**
      * 截取当前显示的地图，截取完毕后，在IdrMapViewListener接口中的onGetCurrentMap()得到bitmap
      */
-//    public void getCurrentMap()
-//    {
-//        this.mapMainView.getCurrentMap();
-//    }
+    public void getCurrentMap()
+    {
+        this.mapMainView.getCurrentMap();
+    }
 
     /**
      * 取得当前地图旋转角度

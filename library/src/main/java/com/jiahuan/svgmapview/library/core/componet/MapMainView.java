@@ -1,6 +1,7 @@
 package com.jiahuan.svgmapview.library.core.componet;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.graphics.Picture;
@@ -40,19 +41,8 @@ public class MapMainView extends SurfaceView implements Callback
     private boolean isScrollGestureEnabled = true;
     private boolean isRotateWithTouchEventCenter = false;
     private boolean isZoomWithTouchEventCenter = false;
-    private boolean isRefreshing = false;
     private boolean isMapLoadFinsh = false;
 
-    private boolean isTranslateAnimation = false;
-    private PointF toAnimationTranslatePoint;
-    private float[] hasTranslate = new float[2];
-
-    // 地图的原始宽与高
-    private boolean isZoomAnimation = false;
-    private float currentTotalAnimationZoom = 1f;
-    private float toAnimationZoomValue = 1f;
-    private float toAnimationZoomPivotX = 0f;
-    private float toAnimationZoomPivotY = 0f;
 
     private static final int TOUCH_STATE_REST = 0;
     private static final int TOUCH_STATE_SCROLLING = 1;
@@ -80,14 +70,12 @@ public class MapMainView extends SurfaceView implements Callback
     private float firstDegrees; //
     private float firstDistance; // 判断旋转和缩放的手势专用
 
-    private float rotateDelta = 0f;
 
     private float rotateDegrees = 0f;
     private float currentRotateDegrees = 0f;
     private float zoom = 1f;
     private float currentZoom = 1f;
 
-    private float nextRotateDegrees = 0f;
 
     private Rect dirty = null;
 
@@ -184,11 +172,10 @@ public class MapMainView extends SurfaceView implements Callback
     {
         try
         {
-            if (surfaceHolder != null && !this.isRefreshing)
+            if (surfaceHolder != null)
             {
                 synchronized (this.surfaceHolder)
                 {
-                    this.isRefreshing = true;
                     Canvas canvas = surfaceHolder.lockCanvas(dirty);
                     if (canvas != null)
                     {
@@ -202,7 +189,6 @@ public class MapMainView extends SurfaceView implements Callback
                         }
                         surfaceHolder.unlockCanvasAndPost(canvas);
                     }
-                    this.isRefreshing = false;
                 }
             }
         }
@@ -498,14 +484,6 @@ public class MapMainView extends SurfaceView implements Callback
         this.refresh();
     }
 
-    public void zoomByWithAnimation(float zoomRatio, float pivotX, float pivotY)
-    {
-        this.isZoomAnimation = true;
-        this.toAnimationZoomValue = zoomRatio;
-        this.toAnimationZoomPivotX = pivotX;
-        this.toAnimationZoomPivotY = pivotY;
-        currentTotalAnimationZoom = 1f;
-    }
 
     public float[] getMapCoordinateWithScreenCoordinate(float x, float y)
     {
@@ -595,28 +573,26 @@ public class MapMainView extends SurfaceView implements Callback
         this.layers.add(sparkOverlay);
     }
 
-//    public void getCurrentMap()
-//    {
-//        try
-//        {
-//            Bitmap bitmap = Bitmap.createBitmap(getWidth(), getHeight(), Bitmap.Config.ARGB_8888);
-//            Canvas bitCanvas = new Canvas(bitmap);
-//            for (SVGMapBaseOverlay layer : layers)
-//            {
-//                Method drawMethod = layer.getClass().getDeclaredMethod("draw", Canvas.class, Matrix.class, float.class, float.class);
-//                drawMethod.setAccessible(true);
-//                drawMethod.invoke(layer, bitCanvas, matrix, getCurrentZoomValue(), getCurrentRotateDegrees());
-//            }
-//            if (idrMapViewListener != null)
-//            {
-//                idrMapViewListener.onGetCurrentMap(bitmap);
-//            }
-//        }
-//        catch (Exception e)
-//        {
-//            e.printStackTrace();
-//        }
-//    }
+    public void getCurrentMap()
+    {
+        try
+        {
+            Bitmap bitmap = Bitmap.createBitmap(getWidth(), getHeight(), Bitmap.Config.ARGB_8888);
+            Canvas bitCanvas = new Canvas(bitmap);
+            for (SVGMapBaseOverlay layer : layers)
+            {
+                layer.draw(bitCanvas, matrix, currentZoom, currentRotateDegrees);
+            }
+            if (mapViewListener != null)
+            {
+                mapViewListener.onGetCurrentMap(bitmap);
+            }
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
 
     /**
      * **********************************************************************
