@@ -56,6 +56,7 @@ Android v2.2+
 - 手势相关设置
 ```java
     // 关闭地图旋转的手势 默认开启
+    // 如果将地图旋转手势置为false，那么地图将被固定在中间，地图旋转的相关操作也将被禁止掉。如果为true那么地图的位置将不会被固定
     mapView.getController().setRotationGestureEnabled(false);
     // 开启地图拖拉手势  默认开启
     mapView.getController().setScrollGestureEnabled(true);
