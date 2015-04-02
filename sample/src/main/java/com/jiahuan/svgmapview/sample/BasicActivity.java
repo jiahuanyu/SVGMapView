@@ -25,7 +25,7 @@ public class BasicActivity extends ActionBarActivity
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
-        mapView = (SVGMapView) findViewById(R.id.mapView);
+        mapView = (SVGMapView) findViewById(R.id.basic_mapview);
 
         mapView.registeMapViewListener(new SVGMapViewListener()
         {

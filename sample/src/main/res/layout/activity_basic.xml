@@ -3,7 +3,7 @@
                 android:layout_height="match_parent">
 
     <com.jiahuan.svgmapview.library.SVGMapView
-        android:id="@+id/mapView"
+        android:id="@+id/basic_mapview"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
