@@ -7,8 +7,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.jiahuan.svgmapview.library.SVGMapView;
-import com.jiahuan.svgmapview.library.SVGMapViewListener;
+import com.jiahuan.svgmapview.SVGMapView;
+import com.jiahuan.svgmapview.SVGMapViewListener;
 import com.jiahuan.svgmapview.sample.helper.AssetsHelper;
 
 
