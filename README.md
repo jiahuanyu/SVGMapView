@@ -12,11 +12,11 @@ Android v2.2+
 ## 基础地图
 - 添加控件到布局文件中
 ```xml
-  <com.jiahuan.svgmapview.library.SVGMapView
+  <com.jiahuan.svgmapview.SVGMapView
       android:id="@+id/mapView"
       android:layout_width="match_parent"
       android:layout_height="match_parent">
-  </com.jiahuan.svgmapview.library.SVGMapView>
+  </com.jiahuan.svgmapview.SVGMapView>
 ```
 
 - `Activity`界面中使用
