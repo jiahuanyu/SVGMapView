@@ -1,16 +1,14 @@
 # SVGMapView
-此项目是本人之前个人完成的室内地图定位导航SDK中室内地图显示部分的模块提取，当然开源部分与原始部分有很大的不同。
-此项目由AndroidStudio开发
+Developed by Android Studio
 
-
-## 系统要求
+## System 
 Android v2.2+
 
-## 效果展示
+## Sample show
 ![Sample](./sample.gif)
 
-## 基础地图
-- 添加控件到布局文件中
+## Basic map
+- Add map into layout
 ```xml
   <com.jiahuan.svgmapview.SVGMapView
       android:id="@+id/mapView"
@@ -19,17 +17,17 @@ Android v2.2+
   </com.jiahuan.svgmapview.SVGMapView>
 ```
 
-- `Activity`界面中使用
+- Reference in `Activity`
 ```java
   mapView = (SVGMapView) findViewById(R.id.mapView);
 ```
 
-- 加载地图
+- Load map
 ```java
   mapView.loadMap(AssetsHelper.getContent(this, "sample2.svg"));  // 这里加载的是SVG的字符串
 ```
 
-- 生命周期函数
+- Lifecycle
 ```java
  @Override
   protected void onPause()
@@ -53,7 +51,7 @@ Android v2.2+
   }
 ```
 
-- 设置地图监听
+- Set map listener
 ```java
     mapView.registeMapViewListener(new SVGMapViewListener()
     {
@@ -103,8 +101,8 @@ Android v2.2+
     });
 ```
 
-## 地图相关操作
-- 手势相关设置
+## Map operation
+- Gesture relative
 ```java
     // 关闭地图旋转的手势 默认开启
     // 如果将地图旋转手势置为false，那么地图将被固定在中间，地图旋转的相关操作也将被禁止掉。如果为true那么地图的位置将不会被固定
@@ -141,7 +139,5 @@ Android v2.2+
 ```
 
 
-## 说明
-现在初始版本还存在大量性能问题，后续我将慢慢推进
-关于功能这一块我会继续完善，毕竟我的原始版本的功能还是很强的
+
 
