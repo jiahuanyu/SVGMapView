@@ -102,7 +102,7 @@ Android v2.2+
 ```
 
 ## Map operation
-- Gesture relative
+- Gesture
 ```java
     // 关闭地图旋转的手势 默认开启
     // 如果将地图旋转手势置为false，那么地图将被固定在中间，地图旋转的相关操作也将被禁止掉。如果为true那么地图的位置将不会被固定
@@ -117,14 +117,14 @@ Android v2.2+
     mapView.getController().setZoomWithTouchEventCenterEnabled(false);
 ```
 
-- 设置当前的缩放率
+- Zoom
 ```java
     // 此方法是相对于初始大小
     mapView.getController().setCurrentZoomValue(2);
     mapView.getController().setCurrentZoomValue(0.5f);
 ```
 
-- 设置当前的旋转角度
+- Rotate
 ```java
     // 正时为顺时针旋转
     // 如果旋转手势是关闭状态，则此方法无效
@@ -132,7 +132,7 @@ Android v2.2+
 ```
 
 
-- 截取当前地图
+- Get current map
 ```java
     mapView.getCurrentMap();
     //调用以上方法之后，在地图截图生成完毕后，在设置地图监听中返回
