@@ -1,14 +1,16 @@
 # SVGMapView
-Developed by Android Studio
-
-## System 
-Android v2.2+
-
-## Sample show
 ![Sample](./sample.gif)
 
+## System Reqirement
+Android v2.2+
+
+## TODO
+Developed by Android Studio
+
+
+
 ## Basic map
-- Add map into layout
+- add map into layout
 ```xml
   <com.jiahuan.svgmapview.SVGMapView
       android:id="@+id/mapView"
@@ -17,17 +19,18 @@ Android v2.2+
   </com.jiahuan.svgmapview.SVGMapView>
 ```
 
-- Reference in `Activity`
+- reference in `Activity`
 ```java
   mapView = (SVGMapView) findViewById(R.id.mapView);
 ```
 
-- Load map
+- load map
 ```java
-  mapView.loadMap(AssetsHelper.getContent(this, "sample2.svg"));  // 这里加载的是SVG的字符串
+// load svg string
+  mapView.loadMap(AssetsHelper.getContent(this, "sample2.svg"));  
 ```
 
-- Lifecycle
+- lifecycle
 ```java
  @Override
   protected void onPause()
@@ -51,14 +54,13 @@ Android v2.2+
   }
 ```
 
-- Set map listener
+- set map listener
 ```java
     mapView.registeMapViewListener(new SVGMapViewListener()
     {
         @Override
         public void onMapLoadComplete()
         {
-            // 地图加载完成
             BasicActivity.this.runOnUiThread(new Runnable()
             {
                 @Override
@@ -72,7 +74,6 @@ Android v2.2+
         @Override
         public void onMapLoadError()
         {
-            // 地图加载失败
             BasicActivity.this.runOnUiThread(new Runnable()
             {
                 @Override
@@ -86,9 +87,6 @@ Android v2.2+
         @Override
         public void onGetCurrentMap(Bitmap bitmap)
         {
-            // 获取地图截图 通过getCurrentMap
-            // 保存到本地
-            //........
             BasicActivity.this.runOnUiThread(new Runnable()
             {
                 @Override
@@ -101,8 +99,8 @@ Android v2.2+
     });
 ```
 
-## Map operation
-- Gesture
+## map control
+- gesture
 ```java
     // 关闭地图旋转的手势 默认开启
     // 如果将地图旋转手势置为false，那么地图将被固定在中间，地图旋转的相关操作也将被禁止掉。如果为true那么地图的位置将不会被固定
@@ -117,14 +115,14 @@ Android v2.2+
     mapView.getController().setZoomWithTouchEventCenterEnabled(false);
 ```
 
-- Zoom
+- zoom
 ```java
     // 此方法是相对于初始大小
     mapView.getController().setCurrentZoomValue(2);
     mapView.getController().setCurrentZoomValue(0.5f);
 ```
 
-- Rotate
+- rotate
 ```java
     // 正时为顺时针旋转
     // 如果旋转手势是关闭状态，则此方法无效
@@ -132,7 +130,7 @@ Android v2.2+
 ```
 
 
-- Get current map
+- get current map
 ```java
     mapView.getCurrentMap();
     //调用以上方法之后，在地图截图生成完毕后，在设置地图监听中返回
