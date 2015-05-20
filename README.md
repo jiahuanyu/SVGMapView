@@ -1,7 +1,7 @@
 # SVGMapView
-<img src="./images/overall_sample.png" width="250px" height="auto" />
+<img src="./images/overall_sample.gif" width="250px" height="auto" />
 <img src="./images/location_sample.png" width="250px" height="auto" />
-<img src="./images/spark_sample.png" width="250px" height="auto" />
+<img src="./images/spark_sample.gif" width="250px" height="auto" />
 ## System Requirement
 Android v2.2+
 
