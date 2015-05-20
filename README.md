@@ -1,6 +1,7 @@
 # SVGMapView
-![Sample](./images/location_sample.png)
-
+<img src="./images/overall_sample.png" width="250px" height="auto" />
+<img src="./images/location_sample.png" width="250px" height="auto" />
+<img src="./images/spark_sample.png" width="250px" height="auto" />
 ## System Requirement
 Android v2.2+
 
@@ -10,46 +11,46 @@ Developed by Android Studio
 ## Quick Start
 ### Add map into layout
 ```xml
-  <com.jiahuan.svgmapview.SVGMapView
-      android:id="@+id/mapView"
-      android:layout_width="match_parent"
-      android:layout_height="match_parent">
-  </com.jiahuan.svgmapview.SVGMapView>
+<com.jiahuan.svgmapview.SVGMapView
+  android:id="@+id/mapView"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+</com.jiahuan.svgmapview.SVGMapView>
 ```
 
 ### Reference in `Activity`
 ```java
-   SVGMapView mapView = (SVGMapView) findViewById(R.id.mapView);
+SVGMapView mapView = (SVGMapView) findViewById(R.id.mapView);
 ```
 
 ### Lifecycle
 ```java
-    @Override
-    protected void onPause()
-    {
-      super.onPause();
-      mapView.onPause();
-    }
+@Override
+protected void onPause()
+{
+  super.onPause();
+  mapView.onPause();
+}
 
-    @Override
-    protected void onResume()
-    {
-      super.onResume();
-      mapView.onResume();
-    }
+@Override
+protected void onResume()
+{
+  super.onResume();
+  mapView.onResume();
+}
 
-    @Override
-    protected void onDestroy()
-    {
-      super.onDestroy();
-      mapView.onDestroy();
-    }
+@Override
+protected void onDestroy()
+{
+  super.onDestroy();
+  mapView.onDestroy();
+}
 ```
 
 ### Load map
 ```java
-    // load svg string
-    mapView.loadMap(AssetsHelper.getContent(this, "sample2.svg"));
+// load svg string
+mapView.loadMap(AssetsHelper.getContent(this, "sample2.svg"));
 ```
 
 ## License
