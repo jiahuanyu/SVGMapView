@@ -4,33 +4,16 @@ import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.view.MotionEvent;
 
-/**
- * 覆盖物基类，所有覆盖物实现此类
- * 
- * @since 1/7/2014
- * @author forward
- * 
- */
 public abstract class SVGMapBaseOverlay
 {
-	protected static final int MAP_LEVEL = 0;
-	protected static final int LOCATION_LEVEL = Integer.MAX_VALUE;
 
-	public int showLevel;
+	protected static final int MAP_LEVEL = 0; // map draw level
+	protected static final int LOCATION_LEVEL = Integer.MAX_VALUE; // location draw level
 
-	private boolean isVisible = true;
+	public int showLevel;// draw level
+	public boolean isVisible = true;
 
-	public boolean isVisible()
-	{
-		return isVisible;
-	}
-
-	public void setVisible(boolean isVisible)
-	{
-		this.isVisible = isVisible;
-	}
-
-    public abstract void onDestory();
+    public abstract void onDestroy();
 
     public abstract void onPause();
 

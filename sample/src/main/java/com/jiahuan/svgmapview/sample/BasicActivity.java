@@ -8,6 +8,9 @@ import android.widget.Toast;
 
 import com.jiahuan.svgmapview.SVGMapView;
 import com.jiahuan.svgmapview.SVGMapViewListener;
+import com.jiahuan.svgmapview.core.data.SVGPicture;
+import com.jiahuan.svgmapview.core.helper.ImageHelper;
+import com.jiahuan.svgmapview.core.helper.map.SVGBuilder;
 import com.jiahuan.svgmapview.sample.helper.AssetsHelper;
 
 
@@ -26,12 +29,11 @@ public class BasicActivity extends ActionBarActivity
 
         mapView = (SVGMapView) findViewById(R.id.basic_mapview);
 
-        mapView.registeMapViewListener(new SVGMapViewListener()
+        mapView.registerMapViewListener(new SVGMapViewListener()
         {
             @Override
             public void onMapLoadComplete()
             {
-                // 地图加载完成
                 BasicActivity.this.runOnUiThread(new Runnable()
                 {
                     @Override
@@ -45,7 +47,6 @@ public class BasicActivity extends ActionBarActivity
             @Override
             public void onMapLoadError()
             {
-                // 地图加载失败
                 BasicActivity.this.runOnUiThread(new Runnable()
                 {
                     @Override
@@ -59,9 +60,6 @@ public class BasicActivity extends ActionBarActivity
             @Override
             public void onGetCurrentMap(Bitmap bitmap)
             {
-                // 获取地图截图
-                // 保存到本地
-                //........
                 BasicActivity.this.runOnUiThread(new Runnable()
                 {
                     @Override
@@ -72,9 +70,8 @@ public class BasicActivity extends ActionBarActivity
                 });
             }
         });
-
+        mapView.setBrandBitmap(ImageHelper.drawableToBitmap(new SVGBuilder().readFromString(SVGPicture.ICON_TOILET).build().getDrawable(), 1.0f));
         mapView.loadMap(AssetsHelper.getContent(this, "sample2.svg"));
-
     }
 
 
@@ -110,6 +107,6 @@ public class BasicActivity extends ActionBarActivity
     protected void onDestroy()
     {
         super.onDestroy();
-        mapView.onDestory();
+        mapView.onDestroy();
     }
 }

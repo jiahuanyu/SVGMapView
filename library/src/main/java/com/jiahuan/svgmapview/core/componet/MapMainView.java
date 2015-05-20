@@ -182,7 +182,7 @@ public class MapMainView extends SurfaceView implements Callback
                         canvas.drawColor(-1);
                         for (int i = 0; i < layers.size(); i++)
                         {
-                            if (layers.get(i).isVisible())
+                            if (layers.get(i).isVisible)
                             {
                                 layers.get(i).draw(canvas, matrix, currentZoom, currentRotateDegrees);
                             }
@@ -352,13 +352,13 @@ public class MapMainView extends SurfaceView implements Callback
         return true;
     }
 
-    public void onDestory()
+    public void onDestroy()
     {
         try
         {
             for (int i = 0; i < layers.size(); i++)
             {
-                layers.get(i).onDestory();
+                layers.get(i).onDestroy();
             }
         }
         catch (Exception e)

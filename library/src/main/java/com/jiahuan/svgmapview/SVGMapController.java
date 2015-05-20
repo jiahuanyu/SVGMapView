@@ -73,7 +73,7 @@ public class SVGMapController
      *
      * @param enabled true/false
      */
-    public void setRoateWithTouchEventCenterEnabled(boolean enabled)
+    public void setRotateWithTouchEventCenterEnabled(boolean enabled)
     {
         this.mapMainView.setRotateWithTouchEventCenter(enabled);
     }

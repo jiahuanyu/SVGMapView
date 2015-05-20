@@ -4,5 +4,6 @@
     <array name="activity_select_array">
         <item>基础地图</item>
         <item>地图操作</item>
+        <item>定位层</item>
     </array>
 </resources>

@@ -102,7 +102,7 @@ public class MapOverlay extends SVGMapBaseOverlay
     }
 
     @Override
-    public void onDestory()
+    public void onDestroy()
     {
         this.floorMap = null;
     }

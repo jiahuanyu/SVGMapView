@@ -26,6 +26,8 @@
             android:name=".OperationActivity">
 
         </activity>
+
+        <activity android:name=".LocationOverlayActivity"></activity>
     </application>
 
 </manifest>

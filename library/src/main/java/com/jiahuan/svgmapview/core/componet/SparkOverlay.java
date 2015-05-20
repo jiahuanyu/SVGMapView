@@ -83,7 +83,7 @@ public class SparkOverlay extends SVGMapBaseOverlay
     }
 
     @Override
-    public void onDestory()
+    public void onDestroy()
     {
     }
 
@@ -112,7 +112,7 @@ public class SparkOverlay extends SVGMapBaseOverlay
     public void draw(Canvas canvas, Matrix matrix, float currentZoomValue, float currentRotateDegrees)
     {
         canvas.save();
-        if (isVisible())
+        if (isVisible)
         {
             canvas.setMatrix(matrix);
             canvas.drawCircle(this.centerPoint.x, this.centerPoint.y, this.currentRadius, this.paint);

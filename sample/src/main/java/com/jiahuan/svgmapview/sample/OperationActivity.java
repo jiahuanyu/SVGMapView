@@ -27,7 +27,7 @@ public class OperationActivity extends ActionBarActivity
 
         mapView = (SVGMapView) findViewById(R.id.operation_mapview);
 
-        mapView.registeMapViewListener(new SVGMapViewListener()
+        mapView.registerMapViewListener(new SVGMapViewListener()
         {
             @Override
             public void onMapLoadComplete()
@@ -137,12 +137,12 @@ public class OperationActivity extends ActionBarActivity
                 if (item.getTitle().toString().contains("关闭"))
                 {
                     // 关闭地图旋转的中心点是手势中心点 默认关闭，中心点是地图的中心点
-                    mapView.getController().setRoateWithTouchEventCenterEnabled(false);
+                    mapView.getController().setRotateWithTouchEventCenterEnabled(false);
                     item.setTitle("开启手势旋转中心");
                 }
                 else
                 {
-                    mapView.getController().setRoateWithTouchEventCenterEnabled(true);
+                    mapView.getController().setRotateWithTouchEventCenterEnabled(true);
                     item.setTitle("关闭手势旋转中心");
                 }
                 break;
@@ -196,6 +196,6 @@ public class OperationActivity extends ActionBarActivity
     protected void onDestroy()
     {
         super.onDestroy();
-        mapView.onDestory();
+        mapView.onDestroy();
     }
 }
