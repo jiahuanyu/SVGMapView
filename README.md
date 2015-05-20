@@ -55,7 +55,7 @@ mapView.loadMap(AssetsHelper.getContent(this, "sample2.svg"));
 ```
 
 ## License
-Copyright 2013 JiaHuan
+Copyright 2015 JiaHuan
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
