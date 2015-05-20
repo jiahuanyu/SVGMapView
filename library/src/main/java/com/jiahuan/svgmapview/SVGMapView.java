@@ -121,7 +121,7 @@ public class SVGMapView extends FrameLayout
     }
 
 
-    public float[] getMapCoordinateWithScreenCoordinate(int screenX, int screenY)
+    public float[] getMapCoordinateWithScreenCoordinate(float screenX, float screenY)
     {
         return this.mapMainView.getMapCoordinateWithScreenCoordinate(screenX, screenY);
     }

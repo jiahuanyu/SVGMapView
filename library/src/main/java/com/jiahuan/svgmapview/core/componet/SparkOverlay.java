@@ -38,7 +38,7 @@ public class SparkOverlay extends SVGMapBaseOverlay
         this.repeatTimes = repeatTimes;
         this.mapMainView = mapMainView;
         this.centerPoint = centerPoint;
-        this.showLevel = 99999;
+        this.showLevel = LOCATION_LEVEL;
         this.paint = new Paint();
         this.paint.setColor(color);
         this.paint.setAntiAlias(true);
