@@ -1,4 +1,6 @@
 # SVGMapView
+It was a SVG indoor map engine for Android.
+These figures show the application for indoor map
 <img src="./images/overall_sample.gif" width="200px" height="auto" />
 <img src="./images/location_sample.png" width="200px" height="auto" />
 <img src="./images/spark_sample.gif" width="200px" height="auto" />
@@ -9,8 +11,8 @@ Android v2.2+
 ## TODO
 Developed by Android Studio
 
-## Quick Start
-### Add map into layout
+## Usage
+### Add View Layout
 ```xml
 <com.jiahuan.svgmapview.SVGMapView
   android:id="@+id/mapView"
@@ -19,7 +21,7 @@ Developed by Android Studio
 </com.jiahuan.svgmapview.SVGMapView>
 ```
 
-### Reference in `Activity`
+### Java
 ```java
 SVGMapView mapView = (SVGMapView) findViewById(R.id.mapView);
 ```
@@ -48,11 +50,35 @@ protected void onDestroy()
 }
 ```
 
-### Load map
+### Load Map
 ```java
 // load svg string
 mapView.loadMap(AssetsHelper.getContent(this, "sample2.svg"));
 ```
+
+## Overlays
+SVGMapView also provides some common overlays, which are normally seen in map applications.
+### LocationOverlay
+```java
+SVGMapLocationOverlay locationOverlay = new SVGMapLocationOverlay(mapView);
+locationOverlay.setIndicatorArrowBitmap(BitmapFactory.decodeResource(getResources(), R.mipmap.indicator_arrow));
+locationOverlay.setPosition(new PointF(400, 500));
+locationOverlay.setIndicatorCircleRotateDegree(90);
+locationOverlay.setMode(SVGMapLocationOverlay.MODE_COMPASS);
+locationOverlay.setIndicatorArrowRotateDegree(-45);
+mapView.getOverLays().add(locationOverlay);
+mapView.refresh();
+```
+
+## Map Control
+### Spark
+```java
+mapView.getController().sparkAtPoint(new PointF(random.nextInt(1000), random.nextInt(1000)), 100, color, 10);
+```
+
+## References
+SVG parse util from https://github.com/japgolly/svg-android.git
+
 
 ## License
 Copyright 2015 JiaHuan
