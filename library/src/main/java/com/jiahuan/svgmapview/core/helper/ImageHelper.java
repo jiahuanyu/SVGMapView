@@ -25,14 +25,7 @@ public class ImageHelper
 		return bitmap;
 	}
 
-	/**
-	 * 正方形数据
-	 * 
-	 * @param drawable
-	 * @param dipValue
-	 * @param context
-	 * @return
-	 */
+
 	public static Bitmap drawableToBitmap(Drawable drawable, int size)
 	{
 		int width = size;
