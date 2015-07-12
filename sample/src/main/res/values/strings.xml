@@ -2,9 +2,10 @@
     <string name="app_name">SVGMapView_Sample</string>
     <string name="action_settings">Settings</string>
     <array name="activity_select_array">
-        <item>基础地图</item>
-        <item>地图操作</item>
-        <item>定位层</item>
-        <item>闪烁</item>
+        <item>BasicMap</item>
+        <item>MapOperation</item>
+        <item>LocationOverlay</item>
+        <item>Spark</item>
+        <item>CustomOverlay</item>
     </array>
 </resources>
