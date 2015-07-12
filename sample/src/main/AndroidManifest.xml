@@ -30,6 +30,8 @@
         <activity android:name=".LocationOverlayActivity"></activity>
 
         <activity android:name=".SparkActivity"></activity>
+
+        <activity android:name=".CustomOverlayActivity"></activity>
     </application>
 
 </manifest>

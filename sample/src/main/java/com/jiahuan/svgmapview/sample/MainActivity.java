@@ -14,7 +14,7 @@ public class MainActivity extends ActionBarActivity
 
     private ListView mSelectListView;
     private ArrayAdapter<String> mAdapter;
-    private Class[] mClasses = {BasicActivity.class, OperationActivity.class,LocationOverlayActivity.class,SparkActivity.class};
+    private Class[] mClasses = {BasicActivity.class, OperationActivity.class,LocationOverlayActivity.class,SparkActivity.class,CustomOverlayActivity.class};
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
