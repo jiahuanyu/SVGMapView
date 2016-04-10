@@ -233,7 +233,7 @@ public class MapMainView extends SurfaceView implements Callback
                 {
                     this.rotateDegrees = this.currentRotateDegrees;
                 }
-                else if (RectHelper.withRect(event, start.x, start.y, 6) && event.getAction() == MotionEvent.ACTION_UP)
+                else if (withFloorPlan(event.getX(), event.getY()) && event.getAction() == MotionEvent.ACTION_UP)
                 {
                     try
                     {
@@ -678,6 +678,19 @@ public class MapMainView extends SurfaceView implements Callback
         {
             this.currentRotateDegrees = 360 + (getCurrentRotateDegrees() % 360);
         }
+    }
+    
+    /**
+     * point is/not in floor plan
+     *
+     * @param x
+     * @param y
+     * @return
+     */
+    public boolean withFloorPlan(float x, float y) {
+        float[] goal = getMapCoordinateWithScreenCoordinate(x, y);
+        return goal[0] > 0 && goal[0] < mapOverlay.getFloorMap().getWidth() && goal[1] > 0
+                && goal[1] < mapOverlay.getFloorMap().getHeight();
     }
 
 }
