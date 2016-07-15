@@ -1,7 +1,5 @@
 package com.jiahuan.svgmapview.core.helper.map;
 
-import java.lang.reflect.Field;
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more contributor license agreements. See the NOTICE
  * file distributed with this work for additional information regarding copyright ownership. The ASF licenses this file
@@ -18,16 +16,6 @@ import java.lang.reflect.Field;
  */
 public class ParserHelper {
 
-	private static final Field STRING_CHARS;
-	static {
-		try {
-			STRING_CHARS = String.class.getDeclaredField("value");
-			STRING_CHARS.setAccessible(true);
-		} catch (Exception e) {
-			throw new RuntimeException(e);
-		}
-	}
-
 	private final char[] s;
 	private final int n;
 	private char current;
@@ -35,7 +23,7 @@ public class ParserHelper {
 
 	public ParserHelper(String str, int pos) {
 		try {
-			this.s = (char[]) STRING_CHARS.get(str);
+			this.s = str.toCharArray();
 		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}
