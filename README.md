@@ -3,9 +3,7 @@ It was a SVG indoor map engine for Android.
 
 These figures show the application for indoor map  
 
-<img src="./images/overall_sample.gif" width="200px" height="auto" />
-<img src="./images/location_sample.png" width="200px" height="auto" />
-<img src="./images/spark_sample.gif" width="200px" height="auto" />
+<img src="./images/overall_sample.gif" width="33%" height="auto" /> <img src="./images/location_sample.png" width="33%" height="auto" /> <img src="./images/spark_sample.gif" width="33%" height="auto" />
 
 ## System Requirement
 Android v2.2+
